@@ -11,4 +11,9 @@ print(data)
 pattern = r'([0-9]*)'
 
 lists = re.findall(pattern, data)
-print(lists)
+lists_real = [i for i in lists  if i != '']
+if lists_real[0] == "0":
+    del lists_real[0]
+    print(lists_real)
+else:
+    print("error number is {0}".format(lists_real[0]))
